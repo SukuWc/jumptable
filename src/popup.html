@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bookmarks</title>
+  <style>
+    ul, ol {
+      padding-left: 20px; /* Half of the default 40px */
+    }
+    body{
+      max-width: 500px;
+      min-width: 200px;
+    }
+body::after {
+  content: ""; /* Add an overlay using a pseudo-element */
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100px; /* Adjust width for the fading effect */
+  background: linear-gradient(to left, white, rgba(255, 255, 255, 0));
+  pointer-events: none; /* Ensure it doesn't block interactions */
+}
+    a {
+  display: inline-block; /* or block, depending on your layout */
+  width: 100%; /* Set a fixed or max width for truncation */
+  overflow: hidden; /* Hide overflowing text */
+  white-space: nowrap; /* Prevent wrapping */
+  text-overflow: ellipsis; /* Add "..." for overflow */
+      margin-bottom: -4px;
+
+      text-decoration: none;
+      
+      
+}
+
+#search{
+  position: absolute;
+  padding-right: 1rem;
+  right: 0;
+  z-index: 1; /* Move above the gradient */
+}
+  </style>
+</head>
+<body>
+
+  <div id="search">[]</div>
+  <div id="bookmarks"></div>
+  <script src="popup.js"></script>
+</body>
+</html>
