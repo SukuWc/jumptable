@@ -6,6 +6,13 @@ browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
   });
   
 
+browser.commands.onCommand.addListener((command) => {
+    console.log("Command", command);
+
+    if (command === "open-popup") {
+        browser.action.openPopup(); // user gesture satisfied
+    }
+});
 
 // Listen for messages to switch tabs
 browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
